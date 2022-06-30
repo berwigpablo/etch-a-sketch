@@ -5,6 +5,7 @@ let rainbow = document.getElementById('rainbow');
 let normalMode = true;
 let rainbowMode = false;
 
+document.addEventListener('DOMContentLoaded', createGrid);
 button.addEventListener('click', createGrid);
 defaux.addEventListener('click', setNormal);
 rainbow.addEventListener('click', setRainbow);
@@ -58,6 +59,9 @@ function addRainbow(e){
 
 function createGrid(){
   let grid = initialize();
+  if (grid > 10000){
+    grid = 10000;
+  }
     for (i = 0; i < grid; i++){
         let gridBlock = document.createElement('div');
     

@@ -6,6 +6,7 @@ body,html{
     height: 100%;
     width: 100%;
     margin: 0;
+    background-color: grey;
 }
 
 
@@ -47,6 +48,8 @@ button{
     height: 500px;
     margin-top: 50px;
     margin-left: 50px;
+    background-color: white;
+    box-shadow: 2px 2px 5px 1px;
 }
 
 .grid{
