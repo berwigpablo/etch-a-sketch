@@ -16,12 +16,36 @@ body,html{
     margin-bottom: 50px;
 }
 
+#content{
+    display:flex;
+    margin-left: -150px;
+}
+
+#button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 150px;
+    margin-right: 50px;
+    padding: 50px;
+    border-radius: 5px;
+}
+
 #container{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 800px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 .grid{
