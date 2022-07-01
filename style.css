@@ -9,17 +9,46 @@ body,html{
     background-color: grey;
 }
 
-
-.titles{
+#header{
     display:flex;
     justify-content: center;
     align-items: center;
+    background-color:white;
+    margin-top: 20px;
     margin-bottom: 50px;
+    height: 90px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px;
+}
+
+.titles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+}
+
+#slider-size{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /*box-shadow: 2px 2px 5px 1px;*/
+    border-radius: 2px;
+    height: 18px;
+    width: 60px;
+    margin-bottom: 5px;
 }
 
 #content{
     display:flex;
-    margin-left: -200px;
+    margin-left: -300px;
+}
+
+#input{
+    width: 200px;
+    height: 30px;
 }
 
 #button-container{
