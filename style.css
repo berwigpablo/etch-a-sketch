@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.container{
+    flex: 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container div{
+    flex: 1 auto;
+    display: flex;
+    height: 6.25%;
+    width: 6.25%;
+}
