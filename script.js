@@ -1,9 +1,37 @@
 const container = document.querySelector('.container');
+const button = document.querySelector('button');
 
-for (i = 1; i < 256; i++){
-    let div = document.createElement('div');
-    container.appendChild(div);
+button.addEventListener('click', createGrid);
+container.childNodes.forEach(div => div.addEventListener('mouseover', changeColor));
 
-    console.log(div);
-    console.log(container);
+
+function createGrid(){
+    let userPrompt = Number(prompt('Choose grid size:'))
+
+    let grid = userPrompt * userPrompt
+
+    for(i = 0; i < grid; i++){
+        let div = document.createElement('div');
+        container.appendChild(div);
+
+    }
+
+    container.childNodes.forEach(gridSize);
 }
+
+function gridSize(div){
+    const height = container.clientHeight / userPrompt;
+    const width = container.clientWidth / userPrompt;
+
+    div.style.height = `${height}`;
+    div.style.width = `${width}`;
+}
+
+function changeColor(event){
+    const currentDiv = event.target;
+    currentDiv.style.backgroundColor = 'black';
+}
+
+
+console.log(container.clientHeight);
+console.log(container.clientWidth);
