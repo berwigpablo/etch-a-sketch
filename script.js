@@ -8,8 +8,13 @@ function chooseSize(){
         container.replaceChildren();
     }
     const userPrompt = Number(prompt('Choose grid size:'));
+
+    if(userPrompt > 100){
+        alert('Grid size too large! Utilize a maximum of 100.');
+    } else if(userPrompt < 0){
+        alert('Use positive numbers to choose grid size.');
+    } else createGrid(userPrompt);
  
-    createGrid(userPrompt);
 }
 
 function createGrid(userPrompt){
@@ -21,7 +26,6 @@ function createGrid(userPrompt){
         container.appendChild(div);
         div.addEventListener('mouseover', changeColor)
     }
-
     gridSize(userPrompt);
 }
 
