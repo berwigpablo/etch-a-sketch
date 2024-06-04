@@ -5,16 +5,11 @@ button.addEventListener('click', chooseSize);
 
 function chooseSize(){
     if (container.childNodes.length > 0){
-        clearGrid();
+        container.replaceChildren();
     }
     const userPrompt = Number(prompt('Choose grid size:'));
  
     createGrid(userPrompt);
-}
-
-function clearGrid(){
-    container.childNodes.remove();
-    return
 }
 
 function createGrid(userPrompt){
