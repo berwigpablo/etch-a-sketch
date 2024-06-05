@@ -81,9 +81,5 @@ function changeColor(event){
         currentDiv.style.opacity = `${opacity}`;
     } else if(currentDiv.style.opacity < 1){
         currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.1;
-<<<<<<< HEAD
-        console.log(currentDiv.style.opacity);
-=======
->>>>>>> style-branch2
     }
 }
