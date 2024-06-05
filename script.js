@@ -14,7 +14,6 @@ function chooseSize(){
     } else if(userPrompt < 0){
         alert('Use positive numbers to choose grid size.');
     } else createGrid(userPrompt);
- 
 }
 
 function createGrid(userPrompt){
@@ -44,5 +43,19 @@ function gridSize(userPrompt){
 
 function changeColor(event){
     const currentDiv = event.target;
-    currentDiv.style.backgroundColor = 'black';
+    let opacity = 0.1;
+    console.log(opacity);
+
+    const red = Math.floor(Math.random() * 256 + 1);
+    const green = Math.floor(Math.random() * 256 + 1);
+    const blue = Math.floor(Math.random() * 256 + 1);
+   
+    if(!currentDiv.style.backgroundColor){
+        currentDiv.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        currentDiv.style.opacity = `${opacity}`;
+    } else{
+        opacity += 0.1;
+        console.log(opacity);
+        currentDiv.style.opacity = `${opacity}`;
+    }
 }
