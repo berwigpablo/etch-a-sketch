@@ -4,7 +4,7 @@ const resetButton = document.querySelector('.reset-button');
 const grid = document.querySelector('.grid-buttons');
 const gridButton = grid.childNodes;
 const button = document.querySelectorAll('button');
-let opacity = 0.1;
+let opacity = 0.2;
 
 startButton.addEventListener('click', chooseSize);
 resetButton.addEventListener('click', resetGrid);
@@ -80,6 +80,6 @@ function changeColor(event){
         currentDiv.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         currentDiv.style.opacity = `${opacity}`;
     } else if(currentDiv.style.opacity < 1){
-        currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.1;
+        currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.2;
     }
 }
