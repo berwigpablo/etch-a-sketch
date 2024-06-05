@@ -1,14 +1,41 @@
 const container = document.querySelector('.container');
-const button = document.querySelector('button');
+const startButton = document.querySelector('.start-button');
+const resetButton = document.querySelector('.reset-button');
+const grid = document.querySelector('.grid-buttons');
+const gridButton = grid.childNodes;
+const button = document.querySelectorAll('button');
 let opacity = 0.1;
 
-button.addEventListener('click', chooseSize);
+startButton.addEventListener('click', chooseSize);
+resetButton.addEventListener('click', resetGrid);
+button.forEach(button => button.addEventListener('mousedown', showClick));
+button.forEach(button => button.addEventListener('click', showClick));
+gridButton.forEach(button => button.addEventListener('click', chooseSize));
 
-function chooseSize(){
+function showClick(event){
+    let clickedButton = event.target;
+
+    clickedButton.classList.toggle('clicked');
+}
+
+function resetGrid(){
+    container.replaceChildren();
+    return
+}
+
+function chooseSize(event){
+    let userPrompt = Number(event.target.classList.value);
+
+
     if (container.childNodes.length > 0){
         container.replaceChildren();
     }
-    const userPrompt = Number(prompt('Choose grid size:'));
+
+    if(userPrompt){
+        userPrompt = Number(event.target.classList.value);
+    } else {
+        userPrompt = Number(prompt('Choose grid size:'));
+    }
 
     if(userPrompt > 100){
         alert('Grid size too large! Utilize a maximum of 100.');
@@ -54,6 +81,9 @@ function changeColor(event){
         currentDiv.style.opacity = `${opacity}`;
     } else if(currentDiv.style.opacity < 1){
         currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.1;
+<<<<<<< HEAD
         console.log(currentDiv.style.opacity);
+=======
+>>>>>>> style-branch2
     }
 }
