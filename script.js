@@ -1,8 +1,15 @@
 const container = document.querySelector('.container');
-const button = document.querySelector('button');
+const startButton = document.querySelector('.start-button');
+const resetButton = document.querySelector('.reset-button');
 let opacity = 0.1;
 
-button.addEventListener('click', chooseSize);
+startButton.addEventListener('click', chooseSize);
+resetButton.addEventListener('click', resetGrid);
+
+function resetGrid(){
+    container.replaceChildren();
+    return
+}
 
 function chooseSize(){
     if (container.childNodes.length > 0){
@@ -54,6 +61,5 @@ function changeColor(event){
         currentDiv.style.opacity = `${opacity}`;
     } else if(currentDiv.style.opacity < 1){
         currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.1;
-        console.log(currentDiv.style.opacity);
     }
 }
