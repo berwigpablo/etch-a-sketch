@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('button');
+let opacity = 0.1;
 
 button.addEventListener('click', chooseSize);
 
@@ -43,8 +44,6 @@ function gridSize(userPrompt){
 
 function changeColor(event){
     const currentDiv = event.target;
-    let opacity = 0.1;
-    console.log(opacity);
 
     const red = Math.floor(Math.random() * 256 + 1);
     const green = Math.floor(Math.random() * 256 + 1);
@@ -53,9 +52,8 @@ function changeColor(event){
     if(!currentDiv.style.backgroundColor){
         currentDiv.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         currentDiv.style.opacity = `${opacity}`;
-    } else{
-        opacity += 0.1;
-        console.log(opacity);
-        currentDiv.style.opacity = `${opacity}`;
+    } else if(currentDiv.style.opacity < 1){
+        currentDiv.style.opacity = Number(currentDiv.style.opacity) + 0.1;
+        console.log(currentDiv.style.opacity);
     }
 }
